@@ -1,0 +1,18 @@
+{
+  "name": "lumino_js_starter_template",
+  "version": "1.0.0",
+  "description": "Template with dock panel using typescript and parcel setup",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts" : { "build": "yarn parcel ./src/index.html"},
+  "dependencies": {
+    "@lumino/datagrid": "^2.0.0",
+    "@lumino/default-theme": "^2.0.0",
+    "@lumino/dragdrop": "^2.0.0",
+    "lumino": "^2.6.0",
+    "parcel": "^2.8.3"
+  },
+  "devDependencies": {
+    "@parcel/transformer-less": "2.8.3"
+  }
+}

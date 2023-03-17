@@ -1,0 +1,33 @@
+
+
+
+@import '../node_modules/@lumino/dragdrop/style/index.css';
+@import '../node_modules/@lumino/widgets/style/index.css';
+@import '../node_modules/@lumino/default-theme/style/accordionpanel.css';
+@import '../node_modules/@lumino/default-theme/style/commandpalette.css';
+@import '../node_modules/@lumino/default-theme/style/datagrid.css';
+@import '../node_modules/@lumino/default-theme/style/dockpanel.css';
+@import '../node_modules/@lumino/default-theme/style/menu.css';
+@import '../node_modules/@lumino/default-theme/style/menubar.css';
+@import '../node_modules/@lumino/default-theme/style/scrollbar.css';
+@import '../node_modules/@lumino/default-theme/style/tabbar.css';
+
+#main{
+    flex: auto 1 1;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  #dock {
+    padding: 4px;
+  }
