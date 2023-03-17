@@ -17,3 +17,7 @@ yarn install
 ```
 yarn run build
 ```
+
+## Screenshot
+
+![alt text](hhttps://github.com/vivekg13186/lumino_js_starter_template/blob/main/screenshot.png?raw=true)
