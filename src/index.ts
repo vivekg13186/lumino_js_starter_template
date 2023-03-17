@@ -1,5 +1,6 @@
 import { BoxPanel, StackedPanel, Widget, DockPanel,MenuBar,Menu } from "@lumino/widgets";
 import { CommandRegistry } from '@lumino/commands';
+import { DeveloperConsole } from "./widgets/DeveloperConsole";
 
 
 function createContent(msg:string){
@@ -59,12 +60,16 @@ function main() {
     widget1.title.label="Widget1 Panel";
     widget1.title.closable=false;
     dock.addWidget(widget1);
-    var widget2 = new Widget({
-        node: createContent("<h1>Widget 2</h1>")
-    })
-    widget2.title.label="Widget2 Panel";
-    widget2.title.closable=true;
-    dock.addWidget(widget2, { mode: 'split-right', ref: widget1 });
+   
+
+    //add developer console
+    var developerConsole = new DeveloperConsole();
+    developerConsole.title.label="Developer Console";
+    developerConsole.title.closable=true;
+    dock.addWidget(developerConsole, { mode: 'split-right', ref: widget1 });
+    developerConsole.logErrorMessage("some test message",{"name" : "hello"});
+    developerConsole.logInfoMessage("some info message");
+    developerConsole.logWarnMessage("some warning message");
 
 }
 
