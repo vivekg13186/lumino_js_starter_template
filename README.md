@@ -12,6 +12,10 @@ Starter template for lumino js
 ```
 yarn install 
 ```
+## Resource Links
+
+[Lumino](https://github.com/jupyterlab/lumino)
+[Luna](https://luna.liriliri.io/?path=/story/console--console)
 
 ## Run / Build
 ```
