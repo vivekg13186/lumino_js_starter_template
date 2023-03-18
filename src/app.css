@@ -11,6 +11,7 @@
 @import '../node_modules/@lumino/default-theme/style/menubar.css';
 @import '../node_modules/@lumino/default-theme/style/scrollbar.css';
 @import '../node_modules/@lumino/default-theme/style/tabbar.css';
+@import  "../node_modules/tabulator-tables/dist/css/tabulator.min.css";
 
 #main{
     flex: auto 1 1;
