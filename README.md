@@ -12,6 +12,7 @@ Starter template for lumino js
  - Chrome style developer console widget
  - Tabulator widget to show advanced grid
  - Toolbar widget
+ - BPMN Editor
 
 ## Install
 ```
@@ -22,6 +23,8 @@ yarn install
  - [Lumino](https://github.com/jupyterlab/lumino)
  - [Luna](https://luna.liriliri.io/?path=/story/console--console)
  - [Tabulator](https://tabulator.info/)
+ - [BPMN IO](https://bpmn.io/)
+  
 ## Run / Build
 ```
 yarn run build

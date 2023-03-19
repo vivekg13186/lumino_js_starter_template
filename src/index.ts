@@ -1,8 +1,10 @@
-import { BoxPanel, StackedPanel, Widget, DockPanel,MenuBar,Menu } from "@lumino/widgets";
+import { BoxPanel, BoxLayout, Widget, DockPanel,MenuBar,Menu } from "@lumino/widgets";
 import { CommandRegistry } from '@lumino/commands';
 import { DeveloperConsole } from "./widgets/DeveloperConsole";
 import { TabulatorPanel } from "./widgets/Tabulator";
 import { Toolbar } from "./widgets/Toolbar";
+import { BPMNEditor } from "./widgets/BPMNEditor";
+import { bpmnXML } from "./sample.data";
 
 
 function createContent(msg:string){
@@ -87,6 +89,14 @@ function createToolbar(terminal){
     return widget1;
 }
 
+function createBPMNEditor(){
+    var editor = new BPMNEditor();
+    editor.setXML(bpmnXML);
+    var w = new BoxPanel();
+    BoxLayout.setStretch(editor,1);
+    w.addWidget(editor);
+    return w;
+}
 function main() {
  
 
@@ -112,8 +122,9 @@ function main() {
     //add developer console
     dock.addWidget(terminal, { mode: 'split-bottom', ref: widget1 });
     //tabulator example
-    dock.addWidget(createTabulatorPanel(), { mode: 'split-right', ref: widget1 });
-    
+    var tabulatorWidget = createTabulatorPanel();
+    dock.addWidget( tabulatorWidget,{ mode: 'split-right', ref: widget1 });
+    dock.addWidget(createBPMNEditor(),{ mode: 'split-right', ref: tabulatorWidget })
 
 }
 

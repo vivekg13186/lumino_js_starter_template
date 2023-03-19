@@ -13,6 +13,10 @@
 @import '../node_modules/@lumino/default-theme/style/tabbar.css';
 @import  "../node_modules/tabulator-tables/dist/css/tabulator.min.css";
 
+@import  "../node_modules/bpmn-js/dist/assets/diagram-js.css";
+@import  "../node_modules/bpmn-js/dist/assets/bpmn-js.css";
+@import  "../node_modules/bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css";
+
 #main{
     flex: auto 1 1;
 }
