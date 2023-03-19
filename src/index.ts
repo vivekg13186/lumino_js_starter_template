@@ -93,6 +93,8 @@ function createBPMNEditor(){
     var editor = new BPMNEditor();
     editor.setXML(bpmnXML);
     var w = new BoxPanel();
+    w.title.label="BPMNEditor"
+    w.title.closable=true;
     BoxLayout.setStretch(editor,1);
     w.addWidget(editor);
     return w;
