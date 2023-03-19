@@ -2,6 +2,7 @@ import { BoxPanel, StackedPanel, Widget, DockPanel,MenuBar,Menu } from "@lumino/
 import { CommandRegistry } from '@lumino/commands';
 import { DeveloperConsole } from "./widgets/DeveloperConsole";
 import { TabulatorPanel } from "./widgets/Tabulator";
+import { Toolbar } from "./widgets/Toolbar";
 
 
 function createContent(msg:string){
@@ -63,14 +64,35 @@ function createDeveloperConsole(){
     developerConsole.logWarnMessage("some warning message");
     return developerConsole;
 }
- 
+
+function createToolbar(terminal){
+    var toolBar = new Toolbar([{
+        command :"refresh",
+        icon:"fa-arrows-rotate"
+    },
+    {
+        command :"save",
+        icon:"fa-floppy-disk"
+    }, {
+        command :"download",
+        icon:"fa-download"
+    }]);
+    toolBar.click.connect(function(slot,arg){
+        terminal.logInfoMessage("toolbar-action:",arg);
+    })
+    var widget1 = new BoxPanel();
+    widget1.title.label="Toolbar example";
+    widget1.title.closable=false;
+    widget1.addWidget(toolBar);
+    return widget1;
+}
 
 function main() {
  
+
+    var terminal = createDeveloperConsole();
+
     let dock = new DockPanel();
-   
-   
-   
     dock.id = 'dock';
     BoxPanel.setStretch(dock, 1);
     let main = new BoxPanel({ direction: 'left-to-right', spacing: 0 });
@@ -83,16 +105,12 @@ function main() {
         main.update();
       };
   
-    var widget1 = new Widget({
-        node: createContent("<h1>Widget 1</h1>")
-    })
-    widget1.title.label="Widget1 Panel";
-    widget1.title.closable=false;
+      var widget1 = createToolbar(terminal);
     dock.addWidget(widget1);
    
 
     //add developer console
-    dock.addWidget(createDeveloperConsole(), { mode: 'split-bottom', ref: widget1 });
+    dock.addWidget(terminal, { mode: 'split-bottom', ref: widget1 });
     //tabulator example
     dock.addWidget(createTabulatorPanel(), { mode: 'split-right', ref: widget1 });
     

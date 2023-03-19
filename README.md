@@ -7,8 +7,11 @@ Starter template for lumino js
  - CSS with default theme setup
  - Typescript support
  - Parcel js for build and bundling
+
+## New Widgets
  - Chrome style developer console widget
  - Tabulator widget to show advanced grid
+ - Toolbar widget
 
 ## Install
 ```
