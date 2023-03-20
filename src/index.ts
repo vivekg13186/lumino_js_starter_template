@@ -51,14 +51,14 @@ function createTabulatorPanel(){
         data:tabledata, //assign data to table
         autoColumns:true, //create columns from data field names
     });
-    tabulator.title.label="Tabulator Example";
+    tabulator.title.label="Tabulator";
     tabulator.title.closable=true;
     return tabulator;
 }
 
 function createDeveloperConsole(){
     var developerConsole = new DeveloperConsole();
-    developerConsole.title.label="Developer Console";
+    developerConsole.title.label="Console";
     developerConsole.title.closable=true;
    
     developerConsole.logErrorMessage("some test message",{"name" : "hello"});
@@ -83,7 +83,7 @@ function createToolbar(terminal){
         terminal.logInfoMessage("toolbar-action:",arg);
     })
     var widget1 = new BoxPanel();
-    widget1.title.label="Toolbar example";
+    widget1.title.label="Toolbar";
     widget1.title.closable=false;
     widget1.addWidget(toolBar);
     return widget1;

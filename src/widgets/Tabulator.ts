@@ -1,5 +1,5 @@
 import {Widget} from "@lumino/widgets"
-import {Tabulator} from 'tabulator-tables';
+import {TabulatorFull as Tabulator} from 'tabulator-tables'
 export class TabulatorPanel extends Widget{
     table: any;
     constructor(config){
