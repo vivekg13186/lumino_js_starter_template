@@ -3,8 +3,8 @@ import {Signal} from "@lumino/signaling"
 
 function createToolbarContainer(){
     var element  = document.createElement("div");
-    element.style.height="35px";
-    element.style.minHeight="35px"
+    element.style.height="25px";
+    element.style.minHeight="25px"
     element.style.display="flex"
     
     return element;

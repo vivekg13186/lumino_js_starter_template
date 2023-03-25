@@ -13,7 +13,8 @@ Starter template for lumino js
  - Tabulator widget to show advanced grid
  - Toolbar widget
  - BPMN Editor
-
+ - Code Editor
+  
 ## Install
 ```
 yarn install 
@@ -24,6 +25,7 @@ yarn install
  - [Luna](https://luna.liriliri.io/?path=/story/console--console)
  - [Tabulator](https://tabulator.info/)
  - [BPMN IO](https://bpmn.io/)
+ - [Code mirror](https://codemirror.net/)
   
 ## Run / Build
 ```

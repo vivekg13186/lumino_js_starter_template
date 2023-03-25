@@ -5,6 +5,7 @@ import { TabulatorPanel } from "./widgets/Tabulator";
 import { Toolbar } from "./widgets/Toolbar";
 import { BPMNEditor } from "./widgets/BPMNEditor";
 import { bpmnXML } from "./sample.data";
+import { JSCodeEditor, JSCodeEditor } from "./widgets/JSCodeEditor";
 
 
 function createContent(msg:string){
@@ -86,6 +87,10 @@ function createToolbar(terminal){
     widget1.title.label="Toolbar";
     widget1.title.closable=false;
     widget1.addWidget(toolBar);
+    var jsCodeEditor = new JSCodeEditor("");
+    jsCodeEditor.setCode("console.log(2323)");
+    BoxLayout.setStretch(jsCodeEditor,1);
+    widget1.addWidget(jsCodeEditor);
     return widget1;
 }
 
