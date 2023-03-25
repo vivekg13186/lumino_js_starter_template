@@ -14,6 +14,7 @@ Starter template for lumino js
  - Toolbar widget
  - BPMN Editor
  - Code Editor
+ - Statusbar
   
 ## Install
 ```

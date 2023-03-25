@@ -6,6 +6,7 @@ import { Toolbar } from "./widgets/Toolbar";
 import { BPMNEditor } from "./widgets/BPMNEditor";
 import { bpmnXML } from "./sample.data";
 import { JSCodeEditor, JSCodeEditor } from "./widgets/JSCodeEditor";
+import { StatusBar } from "./widgets/Statusbar";
 
 
 function createContent(msg:string){
@@ -108,8 +109,9 @@ function main() {
  
 
     var terminal = createDeveloperConsole();
-
+    var statusBar = new StatusBar();
     let dock = new DockPanel();
+    BoxLayout.setStretch(dock,1);
     dock.id = 'dock';
     BoxPanel.setStretch(dock, 1);
     let main = new BoxPanel({ direction: 'left-to-right', spacing: 0 });
@@ -117,6 +119,7 @@ function main() {
     main.addWidget(dock);
     Widget.attach(setupMenuBar(),document.body);
     Widget.attach(main,document.body);
+    Widget.attach(statusBar,document.body);
 
     window.onresize = () => {
         main.update();
@@ -130,6 +133,8 @@ function main() {
     dock.addWidget(terminal, { mode: 'split-bottom', ref: widget1 });
     //tabulator example
     var tabulatorWidget = createTabulatorPanel();
+
+    
     dock.addWidget( tabulatorWidget,{ mode: 'split-right', ref: widget1 });
     dock.addWidget(createBPMNEditor(),{ mode: 'split-right', ref: tabulatorWidget })
 
